@@ -362,10 +362,10 @@
 #     w+= i
 # print(w)
 
-q= [ 1 , 3, 5 , 67]
+# q= [ 1 , 3, 5 , 67]
 # q= list(map(int,input().split()))
-print(max(q))
-print(min(q))
+# print(max(q))
+# print(min(q))
 
 # q= [1, 1, 2, 3, 3, 4, 5, 5, 5]
 # w= set(q)
@@ -517,4 +517,5 @@ print(min(q))
 # numbers= [1, 3, 6, 56, 78, 43]
 # numbers.sort()
 # print(numbers)
+
 
