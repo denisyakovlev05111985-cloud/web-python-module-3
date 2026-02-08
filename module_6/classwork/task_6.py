@@ -19,7 +19,7 @@ for el, status in history:
     if el not in last_status:
         last_status[el]= status
         continue
-
+        
     prev= last_status[el]
     if (prev, status) not in kortegi:
         if el not in errors:
