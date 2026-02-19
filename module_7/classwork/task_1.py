@@ -76,6 +76,7 @@ total= {}
 ins={}
 outs={}
 
+
 for operation in operations:
    date, product, operation_type, quantity= operation['date'], operation['product'], operation['operation_type'], operation['quantity']
 
@@ -99,3 +100,68 @@ for key, value in ins.items():
 
 for key, value in outs.items():
    print(f':отгружено {key}: {value}')
+
+negativ_product=[]
+
+for product, quantity  in total.items():
+   if quantity < 0:
+      negativ_product.append(product)
+      print(negativ_product)
+      print(f'ошибка учета {product}: {quantity}')
+
+max_ins={}
+max_outs={}
+
+max_ins_product= None
+max_ins_count= 0
+
+for product, count in ins.items():
+   if count > max_ins_count:
+      max_ins_product= product
+      max_ins_count= count
+max_ins[max_ins_product] = max_ins_count
+print(f'максимальным количеством поступлений: {max_ins}')
+
+max_outs_product= None
+max_outs_count= 0
+
+for product, count in outs.items():
+   if count > max_outs_count:
+      max_outs_product= product
+      max_outs_count= count
+max_outs[max_outs_product] = max_outs_count
+print(f'максимальным количеством отгрузок: {max_outs}')
+
+apple=[]
+
+for operation in operations:
+   date, product, operation_type, quantity= operation['date'], operation['product'], operation['operation_type'], operation['quantity']
+
+   if product == 'яблоко':
+      apple.append(date)
+print(f'множество всех дат,когда происходили операции с товаром "яблоко": {apple}')
+
+
+with open('report.txt', 'w', encoding='utf-8') as file:
+   file.write('- ОТЧЁТ ПО СКЛАДУ\n')
+   file.write('- Итоговые остатки\n')
+   for key, value in total.items():
+      file.write(f':на складе {key}: {value}\n')
+   file.write('- Общее поступление\n')
+   for key, value in ins.items():
+      file.write(f':приехало {key}: {value}\n')
+   file.write('- Общая отгрузка\n')
+   for key, value in outs.items():
+      file.write(f':отгружено {key}: {value}\n')
+   file.write('- Товары с отрицательным остатком:\n')
+   for product in negativ_product:
+      file.write(f'{product}\n')
+   file.write('- Товар с максимальным поступлением:\n')
+   for product, quantity in max_ins.items():
+      file.write(f'{product}: {quantity}\n')
+   file.write('- Товар с максимальной отгрузкой:\n')
+   for product, quantity in max_outs.items():
+      file.write(f'{product}: {quantity}\n')
+   file.write('- Даты операций с яблоком:\n')
+   for date in apple:
+      file.write(f'{date}\n')
