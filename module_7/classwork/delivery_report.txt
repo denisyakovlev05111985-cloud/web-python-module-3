@@ -1,0 +1,24 @@
+- статистика по складам
+ North: {'total': 3, 'delayed': 2}
+ East: {'total': 2, 'delayed': 1}
+ West: {'total': 2, 'delayed': 1}
+ South: {'total': 2, 'delayed': 1}
+
+- список городов
+Boston
+Miami
+Chicago
+Dallas
+Atlanta
+
+дубликаты shipment_id
+SHP-1002
+
+- склад с максимальным процентом просрочек
+North(0.6666666666666666)
+
+- доставленные объёмы по городам
+Chicago: 55
+Boston: 40
+Dallas: 60
+Miami: 30
