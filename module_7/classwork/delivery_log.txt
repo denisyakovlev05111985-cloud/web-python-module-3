@@ -1,0 +1,9 @@
+SHP-1001,North,Chicago,3,3,40,delivered
+SHP-1002,North,Boston,4,6,20,delivered
+SHP-1003,East,Miami,2,2,35,cancelled
+SHP-1004,East,Chicago,5,8,15,delivered
+SHP-1005,West,Dallas,1,1,50,delivered
+SHP-1006,West,Miami,2,4,30,delivered
+SHP-1002,North,Boston,4,6,20,delivered
+SHP-1007,South,Atlanta,6,6,25,in_transit
+SHP-1008,South,Dallas,3,5,10,delivered
