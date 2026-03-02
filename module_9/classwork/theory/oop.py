@@ -36,7 +36,13 @@ class Employee:
         self._salary= 0
     def info(self):
         return f'{self.name}->{self.salary}'
+
+    def __str__(self):
+        return f'{self.name}: {self.salary}'
     
+    def __eq__(self):
+        if not isinstance(other, Employee):
+            return NotImplemented
     @classmethod
     def from_string(cls, raw):
         emp_id, name, salary= raw.split(',')
@@ -100,3 +106,4 @@ print(m.yearly_income())
 # print(e.emp_id, e.name, e.salary, Employee.valid_name(e.name()))
 # del e.salary
 # print(e.salary)
+
