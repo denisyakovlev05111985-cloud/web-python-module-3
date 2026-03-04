@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "last_name": "яковлев",
+    "first_name": "денис",
+    "middle_name": "сергеевич",
+    "birth_year": 1985,
+    "position": "оператор чпу",
+    "salary": 150000.0
+  }
+]
