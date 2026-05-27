@@ -225,3 +225,18 @@ WHERE
     AND e.department_id IS NOT NULL
 ORDER BY p.budget DESC;
 
+SELECT DISTINCT
+    e.name AS employee_name,
+    e.salary AS salary,
+    d.name AS department_name,
+    p.name AS project_name,
+    p.budget AS project_budget
+FROM employees e
+JOIN departments d ON e.department_id = d.id
+JOIN projects p ON p.employee_id = e.id
+WHERE
+    e.salary BETWEEN 90000 AND 170000
+    AND d.name IN ('IT', 'HR', 'Finance')
+    AND p.is_active = TRUE
+    AND p.budget > e.salary
+ORDER BY e.name;
