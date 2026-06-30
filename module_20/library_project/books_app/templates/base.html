@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Библиотека{% endblock %}</title>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'home' %}">Главная</a> |
+        <a href="{% url 'writers' %}">Писатели</a> |
+        <a href="{% url 'books' %}">Топ лучших книг</a>
+    </nav>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>

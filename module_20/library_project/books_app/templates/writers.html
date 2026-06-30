@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Писатели — Библиотека{% endblock %}
+
+{% block content %}
+<h1>Писатели</h1>
+
+<p>Выберите писателя из списка:</p>
+<ul>
+    {% for writer_name in writers %}
+        <!-- Генерируем ссылку вида /writers/Hemingway -->
+        <li>
+            <a href="{% url 'writer_detail' name=writer_name %}">
+                {{ writer_name }}
+            </a>
+        </li>
+    {% empty %}
+        <li>Список пуст</li>
+    {% endfor %}
+</ul>
+{% endblock %}
