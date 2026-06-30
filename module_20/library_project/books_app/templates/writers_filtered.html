@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }} — Библиотека{% endblock %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+
+{% if has_results %}
+  <p>Найдено книг: {{ filtered_books|length }}</p>
+  <ul>
+    {% for book in filtered_books %}
+      <li>
+        <strong>{{ book.title }}</strong>
+        {% if book.year %}({{ book.year }}){% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>К сожалению, за указанный год книг не найдено.</p>
+{% endif %}
+
+<a href="{% url 'writers' %}">← Вернуться к списку писателей</a>
+{% endblock %}

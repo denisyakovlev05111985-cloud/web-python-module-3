@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }} — Библиотека{% endblock %}
+
+{% block content %}
+<h1>{{ writer.name }}</h1>
+<p><strong>Биография:</strong> {{ writer.bio }}</p>
+
+<h3>Известные произведения:</h3>
+<ul>
+    {% for book in writer.books %}
+        <li>{{ book }}</li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'writers' %}">← Вернуться к списку писателей</a>
+{% endblock %}

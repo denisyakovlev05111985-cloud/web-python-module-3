@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }} — Библиотека{% endblock %}
+
+{% block content %}
+<h1>{{ book.title }}</h1>
+<p><strong>Автор:</strong> {{ book.author }}</p>
+<p><strong>Год издания:</strong> {{ book.year }}</p>
+{% if position %}
+<p><strong>Место в топе:</strong> №{{ position }}</p>
+{% endif %}
+
+<h3>Описание:</h3>
+<p>{{ book.desc }}</p>
+
+<a href="{% url 'books' %}">← Вернуться к списку книг</a>
+{% endblock %}

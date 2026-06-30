@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Топ лучших книг — Библиотека{% endblock %}
+
+{% block content %}
+<h1>Топ лучших книг</h1>
+
+<p>Выберите книгу по номеру места:</p>
+<ol>
+    {% for book in books %}
+        <li>
+            <strong>{{ book.title }}</strong> — {{ book.author }} ({{ book.year }})
+            <br>
+            <a href="{% url 'book_detail' position=forloop.counter %}">Подробнее (место №{{ forloop.counter }})</a>
+        </li>
+    {% empty %}
+        <li>Список пуст</li>
+    {% endfor %}
+</ol>
+
+<p>Или просто откройте адрес вручную: <code>/books/1</code>, <code>/books/2</code> и т.д.</p>
+{% endblock %}
